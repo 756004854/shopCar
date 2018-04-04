@@ -1,0 +1,32 @@
+@charset "utf-8";
+.demo{width:820px;height: 360px;position: absolute;margin: auto;top: 0;bottom: 0;left: 0;right: 0}
+.box{float:left;width:198px;height:320px;margin-left:5px;border:1px solid #e0e0e0;text-align:center}
+.box p{line-height:20px;padding:4px 4px 10px 4px;text-align:left}
+.box:hover{border:1px solid #f90}
+.box h4{line-height:32px;font-size:14px;color:#f30;font-weight:500}
+.box h4 span{font-size:20px}
+.flyer{display:block;width:50px;height:50px;border-radius:50px;position:fixed;z-index:9999}
+.button{display:inline-block;outline:0;cursor:pointer;text-align:center;text-decoration:none;font:16px/100% 'Microsoft yahei',Arial,Helvetica,sans-serif;padding:.5em 2em .55em;text-shadow:0 1px 1px rgba(0,0,0,.3);-webkit-border-radius:.5em;-moz-border-radius:.5em;border-radius:.5em;-webkit-box-shadow:0 1px 2px rgba(0,0,0,.2);-moz-box-shadow:0 1px 2px rgba(0,0,0,.2);box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.button:hover{text-decoration:none}
+.button:active{position:relative;top:1px}
+.orange{color:#fef4e9;border:solid 1px #da7c0c;background:#f78d1d;background:-webkit-gradient(linear,left top,left bottom,from(#faa51a),to(#f47a20));background:-moz-linear-gradient(top,#faa51a,#f47a20);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20')}
+.orange:hover{background:#f47c20;background:-webkit-gradient(linear,left top,left bottom,from(#f88e11),to(#f06015));background:-moz-linear-gradient(top,#f88e11,#f06015);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015')}
+.orange:active{color:#fcd3a5;background:-webkit-gradient(linear,left top,left bottom,from(#f47a20),to(#faa51a));background:-moz-linear-gradient(top,#f47a20,#faa51a);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a')}
+.sidebar{position:fixed;top:0;right:50px;background:#000;width:35px;height:35px;font-size:12px;color:#fff}
+.cart i{width:35px;height:35px;display:block;background:url(../img/car.png) no-repeat;}
+#num{
+	font-size:10px;
+    position: fixed;
+    top: 3px;
+    right: 66px;
+    z-index: 10001;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    border-radius: 50%;
+    background:red;
+    color:#fff;
+    text-align: center
+}
+#msg{position:fixed;top:300px;right:35px;z-index:10000;width:250px;height:52px;line-height:52px;font-size:20px;text-align:center;color:#fff;background:#360;display:none}
+
