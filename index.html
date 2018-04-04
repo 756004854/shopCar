@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基于jquery fly插件实现加入购物车抛物线动画效果</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery.fly.min.js"></script>
+    <!--[if lte IE 9]>
+    <script src="requestAnimationFrame.js"></script>
+    <![endif]-->
+    <script>
+    $(function() {
+        var offset = $("#end").offset();
+        $(".addcar").click(function(event){
+            var num = $("#num").html()
+            var addcar = $(this);
+            var img = addcar.parent().find('img').attr('src'); // 获取当前点击图片链接
+            var flyer = $('<img class="flyer" src="'+img+'">'); // 抛物体对象
+            flyer.fly({
+                start: {
+                    left: event.clientX, // 抛物体起点横坐标
+                    top: event.clientY // 抛物体起点纵坐标
+                },
+                end: {
+                    left: offset.left+10, // 抛物体终点横坐标
+                    top: offset.top+10, // 抛物体终点纵坐标
+                    width: 0, // 抛物体宽度
+                    height: 0 // 抛物体高度
+                },
+                onEnd: function(){
+                    $("#msg").show().fadeIn(1000).fadeOut(1000); // 成功加入购物车动画效果
+                    addcar.css("cursor","default").removeClass('orange').unbind('click'); // 删除加入购物车按钮点击事件
+                    $("#num").html(++num)
+                    this.destory(); // 销毁抛物体
+                }
+            });
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class="demo">
+        <div class="box">
+            <img src="img/1.jpg" width="180" height="180">
+            <h4>¥<span>3499.00</span></h4>
+            <a href="javascript:;" class="button orange addcar">加入购物车</a>
+        </div>
+        <div class="box">
+            <img src="img/2.jpg" width="180" height="180">
+            <h4>¥<span>3799.00</span></h4>
+            <a href="javascript:;" class="button orange addcar">加入购物车</a>
+        </div>
+        <div class="box">
+            <img src="img/3.jpg" width="180" height="180">
+            <h4>¥<span>¥3999.00</span></h4>
+            <a href="javascript:;" class="button orange addcar">加入购物车</a>
+        </div>
+        <div class="box">
+            <img src="img/4.jpg" width="180" height="180">
+            <h4>¥<span>6969.00</span></h4>
+            <a href="javascript:;" class="button orange addcar">加入购物车</a>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="cart">
+            <i id="end"></i>
+            <span id="num">0</span>
+        </div>
+    </div>
+    <div id="msg" style="display:none">已成功加入购物车！</div>
+</body>
+</html>
